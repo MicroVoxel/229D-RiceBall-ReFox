@@ -8,6 +8,8 @@ public class Shooting : MonoBehaviour
     public GameObject target;
     public Rigidbody2D bulletPrefab;
 
+    public int WaitTime = 1;
+
     private void Start()
     {
         StartCoroutine(shootRoutine());
@@ -17,7 +19,7 @@ public class Shooting : MonoBehaviour
         while (true)
         {
             Shoot();
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(WaitTime);
         }
     }
 
