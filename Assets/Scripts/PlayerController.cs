@@ -90,23 +90,4 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocityX = x;
         }
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isJumping = false;
-            animator.SetBool("isJumping", isJumping);
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isJumping = true;
-            animator.SetBool("isJumping", isJumping);
-        }
-    }
-
 }
